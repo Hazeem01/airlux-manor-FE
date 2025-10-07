@@ -13,16 +13,16 @@ const Footer = () => {
               Luxury Real Estate. Trusted Investments. Timeless Value.
             </p>
             <div className="flex space-x-4 mt-6">
-              <a href="https://www.instagram.com/airluxmanor?igsh=MXBnb2pvOGdpYnVlMQ%3D%3D&utm_source=qr" className="text-luxury-gold hover:text-luxury-gold-light transition-colors" aria-label="Facebook">
+              {/* <a href="https://www.instagram.com/airluxmanor?igsh=MXBnb2pvOGdpYnVlMQ%3D%3D&utm_source=qr" className="text-luxury-gold hover:text-luxury-gold-light transition-colors" aria-label="Facebook">
                 <Facebook size={20} />
-              </a>
+              </a> */}
               <a href="https://www.instagram.com/airluxmanor?igsh=MXBnb2pvOGdpYnVlMQ%3D%3D&utm_source=qr" className="text-luxury-gold hover:text-luxury-gold-light transition-colors" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
-              <a href="https://www.instagram.com/airluxmanor?igsh=MXBnb2pvOGdpYnVlMQ%3D%3D&utm_source=qr" className="text-luxury-gold hover:text-luxury-gold-light transition-colors" aria-label="Twitter">
+              {/* <a href="https://www.instagram.com/airluxmanor?igsh=MXBnb2pvOGdpYnVlMQ%3D%3D&utm_source=qr" className="text-luxury-gold hover:text-luxury-gold-light transition-colors" aria-label="Twitter">
                 <Twitter size={20} />
-              </a>
-              <a href="https://www.instagram.com/airluxmanor?igsh=MXBnb2pvOGdpYnVlMQ%3D%3D&utm_source=qr" className="text-luxury-gold hover:text-luxury-gold-light transition-colors" aria-label="LinkedIn">
+              </a> */}
+              <a href="https://www.linkedin.com/company/airlux-manor" className="text-luxury-gold hover:text-luxury-gold-light transition-colors" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
             </div>

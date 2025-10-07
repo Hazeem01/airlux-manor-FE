@@ -1,12 +1,20 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Building2, Calendar } from "lucide-react";
+import { seoData } from "@/lib/seoData";
 
 const Properties = () => {
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title={seoData.properties.title}
+        description={seoData.properties.description}
+        keywords={seoData.properties.keywords}
+        structuredData={seoData.properties.structuredData}
+      />
       <Navigation />
       <WhatsAppButton />
 

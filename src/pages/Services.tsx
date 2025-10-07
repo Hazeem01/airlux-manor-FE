@@ -1,8 +1,10 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Home, Key, TrendingUp, Settings } from "lucide-react";
+import { seoData } from "@/lib/seoData";
 
 const Services = () => {
   const services = [
@@ -39,6 +41,12 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title={seoData.services.title}
+        description={seoData.services.description}
+        keywords={seoData.services.keywords}
+        structuredData={seoData.services.structuredData}
+      />
       <Navigation />
       <WhatsAppButton />
 

@@ -1,7 +1,9 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEO from "@/components/SEO";
 import { CheckCircle2 } from "lucide-react";
+import { seoData } from "@/lib/seoData";
 
 const About = () => {
   const values = [
@@ -25,6 +27,12 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title={seoData.about.title}
+        description={seoData.about.description}
+        keywords={seoData.about.keywords}
+        structuredData={seoData.about.structuredData}
+      />
       <Navigation />
       <WhatsAppButton />
 

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://airluxmanor.com/</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://airluxmanor.com/og-image.png</image:loc>
+      <image:title>Airlux Manor - Luxury Real Estate Abuja Nigeria</image:title>
+      <image:caption>Premium luxury real estate services in Abuja, Nigeria</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- About Page -->
+  <url>
+    <loc>https://airluxmanor.com/about</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Properties Page -->
+  <url>
+    <loc>https://airluxmanor.com/properties</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://airluxmanor.com/property-1.png</image:loc>
+      <image:title>Luxury Property 1 - Abuja Nigeria</image:title>
+      <image:caption>Premium luxury property in Abuja</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://airluxmanor.com/property-2.png</image:loc>
+      <image:title>Luxury Property 2 - Abuja Nigeria</image:title>
+      <image:caption>High-end luxury property in Abuja</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://airluxmanor.com/property-3.png</image:loc>
+      <image:title>Luxury Property 3 - Abuja Nigeria</image:title>
+      <image:caption>Exclusive luxury property in Abuja</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Services Page -->
+  <url>
+    <loc>https://airluxmanor.com/services</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://airluxmanor.com/contact</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Blog Page -->
+  <url>
+    <loc>https://airluxmanor.com/blog</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Individual Property Pages (Examples - Add more as needed) -->
+  <url>
+    <loc>https://airluxmanor.com/properties/luxury-villa-asokoro</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://airluxmanor.com/property-1.png</image:loc>
+      <image:title>Luxury Villa Asokoro - Abuja Nigeria</image:title>
+      <image:caption>Premium luxury villa in Asokoro, Abuja</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://airluxmanor.com/properties/premium-apartment-maitama</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://airluxmanor.com/property-2.png</image:loc>
+      <image:title>Premium Apartment Maitama - Abuja Nigeria</image:title>
+      <image:caption>High-end luxury apartment in Maitama, Abuja</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://airluxmanor.com/properties/executive-penthouse-wuse</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://airluxmanor.com/property-3.png</image:loc>
+      <image:title>Executive Penthouse Wuse - Abuja Nigeria</image:title>
+      <image:caption>Exclusive executive penthouse in Wuse, Abuja</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Blog Posts (Examples - Add more as needed) -->
+  <url>
+    <loc>https://airluxmanor.com/blog/luxury-real-estate-trends-abuja-2024</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://airluxmanor.com/blog/property-investment-guide-nigeria</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://airluxmanor.com/blog/abuja-luxury-property-market-analysis</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+</urlset>

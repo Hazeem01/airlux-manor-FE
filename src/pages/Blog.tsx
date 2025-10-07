@@ -1,8 +1,10 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { BookOpen, TrendingUp, Lightbulb, Award } from "lucide-react";
+import { seoData } from "@/lib/seoData";
 
 const Blog = () => {
   const blogCategories = [
@@ -30,6 +32,12 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title={seoData.blog.title}
+        description={seoData.blog.description}
+        keywords={seoData.blog.keywords}
+        structuredData={seoData.blog.structuredData}
+      />
       <Navigation />
       <WhatsAppButton />
 

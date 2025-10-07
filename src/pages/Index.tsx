@@ -1,12 +1,14 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, TrendingUp, Award, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/property-1.png";
 import property2 from "@/assets/property-2.png";
 import property3 from "@/assets/property-3.png";
+import { seoData } from "@/lib/seoData";
 
 const Index = () => {
   const values = [
@@ -34,6 +36,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title={seoData.home.title}
+        description={seoData.home.description}
+        keywords={seoData.home.keywords}
+        structuredData={seoData.home.structuredData}
+      />
       <Navigation />
       <WhatsAppButton />
 
