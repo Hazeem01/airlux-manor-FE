@@ -9,6 +9,7 @@ import { seoData } from "@/lib/seoData";
 import { getBlogPosts, getBlogCategories, BlogPost, BlogCategory } from "@/lib/api";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Blog = () => {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
