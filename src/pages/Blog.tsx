@@ -83,7 +83,7 @@ const Blog = () => {
       />
       <Helmet>
         {/* RSS Feed Auto-Discovery */}
-        <link rel="alternate" type="application/rss+xml" title="Airlux Manor Blog RSS Feed" href="https://api.airluxmanor.com/api/rss.xml" />
+        <link rel="alternate" type="application/rss+xml" title="Airlux Manor Blog RSS Feed" href="https://airlux-manor-be-production.up.railway.app/api/rss.xml" />
         
         {/* Additional Blog Listing Structured Data */}
         {blogPosts.length > 0 && (

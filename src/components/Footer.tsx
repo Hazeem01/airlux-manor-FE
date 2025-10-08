@@ -39,7 +39,7 @@ const Footer = () => {
               <li><Link to="/contact" className="font-inter text-sm text-gray-400 hover:text-luxury-gold transition-colors">Contact</Link></li>
               <li>
                 <a 
-                  href="https://api.airluxmanor.com/api/rss.xml" 
+                  href="https://airlux-manor-be-production.up.railway.app/api/rss.xml" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="font-inter text-sm text-gray-400 hover:text-luxury-gold transition-colors inline-flex items-center space-x-1"
