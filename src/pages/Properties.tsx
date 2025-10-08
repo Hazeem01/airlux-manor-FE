@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SEO from "@/components/SEO";
+import NewsletterSubscription from "@/components/NewsletterSubscription";
 import { Button } from "@/components/ui/button";
 import { Building2, Calendar } from "lucide-react";
 import { seoData } from "@/lib/seoData";
@@ -98,6 +99,23 @@ const Properties = () => {
             <Button variant="luxury" size="lg">
               Contact Our Team
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Subscription */}
+      <section className="bg-gray-50 py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-luxury-dark mb-6">
+              Stay Updated on New Properties
+            </h2>
+            <p className="font-inter text-lg text-gray-600 mb-8">
+              Be the first to know about new luxury properties, exclusive listings, and market updates in Abuja
+            </p>
+            <div className="max-w-md mx-auto">
+              <NewsletterSubscription source="properties" />
+            </div>
           </div>
         </div>
       </section>

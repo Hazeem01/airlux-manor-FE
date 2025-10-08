@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin, Rss } from "lucide-react";
 import logoLight from "@/assets/logo-light.png";
 
 const Footer = () => {
@@ -37,6 +37,17 @@ const Footer = () => {
               <li><Link to="/properties" className="font-inter text-sm text-gray-400 hover:text-luxury-gold transition-colors">Properties</Link></li>
               <li><Link to="/blog" className="font-inter text-sm text-gray-400 hover:text-luxury-gold transition-colors">Blog</Link></li>
               <li><Link to="/contact" className="font-inter text-sm text-gray-400 hover:text-luxury-gold transition-colors">Contact</Link></li>
+              <li>
+                <a 
+                  href="https://api.airluxmanor.com/api/rss.xml" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="font-inter text-sm text-gray-400 hover:text-luxury-gold transition-colors inline-flex items-center space-x-1"
+                >
+                  <Rss size={14} />
+                  <span>RSS Feed</span>
+                </a>
+              </li>
             </ul>
           </div>
 

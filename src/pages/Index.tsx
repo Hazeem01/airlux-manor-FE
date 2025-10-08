@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SEO from "@/components/SEO";
+import NewsletterSubscription from "@/components/NewsletterSubscription";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, TrendingUp, Award, Star } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -201,17 +202,9 @@ const Index = () => {
             <p className="font-inter text-lg text-gray-600 mb-8">
               Subscribe to receive exclusive property listings, market insights, and luxury real estate news
             </p>
-            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-luxury-gold font-inter"
-                required
-              />
-              <Button variant="luxury" size="lg">
-                Subscribe
-              </Button>
-            </form>
+            <div className="max-w-md mx-auto">
+              <NewsletterSubscription source="homepage" />
+            </div>
           </div>
         </div>
       </section>
