@@ -7,6 +7,7 @@ import { Helmet } from 'react-helmet-async';
 import { getBlogPost, BlogPost as BlogPostType } from '@/lib/api';
 import { Calendar, User, Tag, ArrowLeft, Share2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import DOMPurify from 'dompurify';
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -67,6 +68,11 @@ const BlogPost = () => {
         });
       }
     }
+  };
+
+  // Sanitize HTML content with DOMPurify for secure rendering
+  const createSafeMarkup = (html: string) => {
+    return { __html: DOMPurify.sanitize(html) };
   };
 
   if (loading) {
@@ -293,7 +299,7 @@ const BlogPost = () => {
       <section className="bg-luxury-cream py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <article
-            className="prose prose-lg prose-luxury max-w-none
+            className="blog-content prose prose-lg prose-luxury max-w-none
               prose-headings:font-playfair prose-headings:text-luxury-dark
               prose-p:font-inter prose-p:text-gray-700 prose-p:leading-relaxed
               prose-a:text-luxury-gold prose-a:no-underline hover:prose-a:underline
@@ -301,7 +307,7 @@ const BlogPost = () => {
               prose-ul:font-inter prose-ol:font-inter
               prose-blockquote:border-l-luxury-gold prose-blockquote:bg-gray-50 prose-blockquote:py-4
               prose-img:rounded-lg prose-img:shadow-lg"
-            dangerouslySetInnerHTML={{ __html: post.content || '' }}
+            dangerouslySetInnerHTML={createSafeMarkup(post.content || '')}
           />
 
           {/* Tags */}

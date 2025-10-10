@@ -46,28 +46,6 @@ const Properties = () => {
             <p className="font-inter text-xl text-gray-600 leading-relaxed mb-8">
               We're carefully curating an exclusive portfolio of luxury properties in Abuja's most prestigious locations. Our listings will feature high-rise apartments, serene villas, and prime land investments.
             </p>
-            <div className="bg-gray-50 rounded-lg p-8 mb-8">
-              <div className="flex items-center justify-center mb-4">
-                <Calendar className="text-luxury-gold mr-3" size={24} />
-                <p className="font-inter font-semibold text-luxury-dark">
-                  Be the first to know when we launch
-                </p>
-              </div>
-              <p className="font-inter text-gray-600 mb-6">
-                Subscribe to our newsletter and get exclusive early access to our property listings.
-              </p>
-              <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-luxury-gold font-inter"
-                  required
-                />
-                <Button variant="luxury" size="lg">
-                  Notify Me
-                </Button>
-              </form>
-            </div>
             <div className="grid sm:grid-cols-3 gap-8 mt-12">
               <div className="text-center">
                 <p className="font-playfair text-4xl font-bold text-luxury-gold mb-2">100+</p>

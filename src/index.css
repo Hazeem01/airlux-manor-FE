@@ -116,3 +116,559 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* ========================================
+   Rich Text Blog Content Styling
+   ======================================== */
+
+/* Blog content container - applies to rendered HTML from the editor */
+.blog-content {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.8;
+  color: #374151;
+}
+
+/* Headings */
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  color: #2e3336;
+  line-height: 1.3;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+}
+
+.blog-content h1 {
+  font-size: 2.5em;
+  margin-top: 1em;
+}
+
+.blog-content h2 {
+  font-size: 2em;
+  margin-top: 1.25em;
+  border-bottom: 2px solid #f3f4f6;
+  padding-bottom: 0.5em;
+}
+
+.blog-content h3 {
+  font-size: 1.75em;
+}
+
+.blog-content h4 {
+  font-size: 1.5em;
+}
+
+.blog-content h5 {
+  font-size: 1.25em;
+}
+
+.blog-content h6 {
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* First heading has no top margin */
+.blog-content h1:first-child,
+.blog-content h2:first-child,
+.blog-content h3:first-child,
+.blog-content h4:first-child,
+.blog-content h5:first-child,
+.blog-content h6:first-child {
+  margin-top: 0;
+}
+
+/* Paragraphs */
+.blog-content p {
+  margin: 1.25em 0;
+  line-height: 1.8;
+  font-size: 1.0625rem;
+}
+
+.blog-content p:first-child {
+  margin-top: 0;
+}
+
+.blog-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* First paragraph after heading - drop cap effect (optional) */
+.blog-content h1 + p:first-letter,
+.blog-content h2 + p:first-letter {
+  /* Uncomment for drop cap effect
+  font-size: 3.5em;
+  float: left;
+  line-height: 1;
+  margin: 0.1em 0.1em 0 0;
+  font-weight: bold;
+  color: #c8a882;
+  font-family: 'Playfair Display', serif;
+  */
+}
+
+/* Lists */
+.blog-content ul,
+.blog-content ol {
+  margin: 1.5em 0;
+  padding-left: 2em;
+}
+
+.blog-content ul {
+  list-style-type: disc;
+}
+
+.blog-content ol {
+  list-style-type: decimal;
+}
+
+.blog-content li {
+  margin: 0.75em 0;
+  line-height: 1.8;
+}
+
+.blog-content li > p {
+  margin: 0.5em 0;
+}
+
+/* Nested lists */
+.blog-content ul ul,
+.blog-content ol ol,
+.blog-content ul ol,
+.blog-content ol ul {
+  margin: 0.5em 0;
+}
+
+.blog-content ul ul {
+  list-style-type: circle;
+}
+
+.blog-content ul ul ul {
+  list-style-type: square;
+}
+
+/* Links */
+.blog-content a {
+  color: #c8a882;
+  text-decoration: none;
+  border-bottom: 1px solid #c8a882;
+  transition: all 0.2s ease;
+}
+
+.blog-content a:hover {
+  color: #2e3336;
+  border-bottom-color: #2e3336;
+}
+
+/* External links - add icon (optional) */
+.blog-content a[href^="http"]:not([href*="airluxmanor.com"])::after {
+  /* Uncomment to add external link icon
+  content: " ↗";
+  font-size: 0.8em;
+  vertical-align: super;
+  */
+}
+
+/* Blockquotes */
+.blog-content blockquote {
+  border-left: 4px solid #c8a882;
+  margin: 2em 0;
+  padding: 1em 1.5em;
+  background: #fafaf9;
+  font-style: italic;
+  color: #4b5563;
+  position: relative;
+}
+
+.blog-content blockquote::before {
+  content: '"';
+  font-size: 4em;
+  color: #c8a882;
+  opacity: 0.2;
+  position: absolute;
+  top: -0.2em;
+  left: 0.1em;
+  font-family: 'Playfair Display', serif;
+}
+
+.blog-content blockquote p {
+  margin: 0.5em 0;
+  position: relative;
+  z-index: 1;
+}
+
+.blog-content blockquote p:first-child {
+  margin-top: 0;
+}
+
+.blog-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.blog-content blockquote cite {
+  display: block;
+  margin-top: 1em;
+  font-style: normal;
+  font-weight: 600;
+  color: #2e3336;
+  font-size: 0.9em;
+}
+
+/* Images */
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 2em auto;
+  display: block;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.blog-content figure {
+  margin: 2em 0;
+}
+
+.blog-content figcaption {
+  text-align: center;
+  font-size: 0.9em;
+  color: #6b7280;
+  margin-top: 0.75em;
+  font-style: italic;
+}
+
+/* Code */
+.blog-content code {
+  background: #f3f4f6;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-family: 'Monaco', 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+  color: #dc2626;
+}
+
+.blog-content pre {
+  background: #1f2937;
+  color: #f3f4f6;
+  padding: 1.5em;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 2em 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.blog-content pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font-size: 0.875em;
+  border-radius: 0;
+}
+
+/* Tables */
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2em 0;
+  font-size: 0.95em;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.blog-content thead {
+  background: linear-gradient(135deg, #2e3336, #1f2937);
+  color: white;
+}
+
+.blog-content th {
+  padding: 1em;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #c8a882;
+}
+
+.blog-content td {
+  padding: 1em;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.blog-content tbody tr:hover {
+  background: #fafaf9;
+}
+
+.blog-content tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Horizontal Rule */
+.blog-content hr {
+  border: none;
+  border-top: 2px solid #e5e7eb;
+  margin: 3em 0;
+  position: relative;
+}
+
+.blog-content hr::after {
+  content: '✦';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 0 1em;
+  color: #c8a882;
+  font-size: 1.2em;
+}
+
+/* Strong/Bold */
+.blog-content strong,
+.blog-content b {
+  font-weight: 700;
+  color: #2e3336;
+}
+
+/* Emphasis/Italic */
+.blog-content em,
+.blog-content i {
+  font-style: italic;
+}
+
+/* Strikethrough */
+.blog-content s,
+.blog-content del {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+/* Underline */
+.blog-content u,
+.blog-content ins {
+  text-decoration: underline;
+  text-decoration-color: #c8a882;
+  text-underline-offset: 0.2em;
+}
+
+/* Mark/Highlight */
+.blog-content mark {
+  background: linear-gradient(135deg, rgba(200, 168, 130, 0.2), rgba(200, 168, 130, 0.3));
+  padding: 0.1em 0.3em;
+  border-radius: 0.2em;
+}
+
+/* Subscript and Superscript */
+.blog-content sub,
+.blog-content sup {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.blog-content sup {
+  top: -0.5em;
+}
+
+.blog-content sub {
+  bottom: -0.25em;
+}
+
+/* Text alignment classes */
+.blog-content .ql-align-center {
+  text-align: center;
+}
+
+.blog-content .ql-align-right {
+  text-align: right;
+}
+
+.blog-content .ql-align-justify {
+  text-align: justify;
+}
+
+/* Color and background from Quill editor */
+.blog-content .ql-font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.blog-content .ql-font-monospace {
+  font-family: 'Monaco', 'Courier New', monospace;
+}
+
+.blog-content .ql-size-small {
+  font-size: 0.875em;
+}
+
+.blog-content .ql-size-large {
+  font-size: 1.25em;
+}
+
+.blog-content .ql-size-huge {
+  font-size: 1.5em;
+}
+
+/* Indentation */
+.blog-content .ql-indent-1 {
+  padding-left: 3em;
+}
+
+.blog-content .ql-indent-2 {
+  padding-left: 6em;
+}
+
+.blog-content .ql-indent-3 {
+  padding-left: 9em;
+}
+
+.blog-content .ql-indent-4 {
+  padding-left: 12em;
+}
+
+.blog-content .ql-indent-5 {
+  padding-left: 15em;
+}
+
+.blog-content .ql-indent-6 {
+  padding-left: 18em;
+}
+
+.blog-content .ql-indent-7 {
+  padding-left: 21em;
+}
+
+.blog-content .ql-indent-8 {
+  padding-left: 24em;
+}
+
+/* Video embeds */
+.blog-content iframe {
+  max-width: 100%;
+  margin: 2em auto;
+  display: block;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive video container */
+.blog-content .video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  margin: 2em 0;
+  border-radius: 0.5rem;
+}
+
+.blog-content .video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .blog-content {
+    font-size: 0.9375rem;
+  }
+
+  .blog-content h1 {
+    font-size: 2em;
+  }
+
+  .blog-content h2 {
+    font-size: 1.75em;
+  }
+
+  .blog-content h3 {
+    font-size: 1.5em;
+  }
+
+  .blog-content h4 {
+    font-size: 1.25em;
+  }
+
+  .blog-content h5 {
+    font-size: 1.1em;
+  }
+
+  .blog-content h6 {
+    font-size: 1em;
+  }
+
+  .blog-content ul,
+  .blog-content ol {
+    padding-left: 1.5em;
+  }
+
+  .blog-content pre {
+    padding: 1em;
+    font-size: 0.875em;
+  }
+
+  .blog-content table {
+    font-size: 0.875em;
+  }
+
+  .blog-content th,
+  .blog-content td {
+    padding: 0.75em;
+  }
+
+  /* Reduce indent on mobile */
+  .blog-content .ql-indent-1 {
+    padding-left: 1.5em;
+  }
+
+  .blog-content .ql-indent-2 {
+    padding-left: 3em;
+  }
+
+  .blog-content .ql-indent-3,
+  .blog-content .ql-indent-4,
+  .blog-content .ql-indent-5,
+  .blog-content .ql-indent-6,
+  .blog-content .ql-indent-7,
+  .blog-content .ql-indent-8 {
+    padding-left: 4.5em;
+  }
+}
+
+/* Print styles */
+@media print {
+  .blog-content {
+    font-size: 12pt;
+    line-height: 1.6;
+    color: #000;
+  }
+
+  .blog-content a {
+    color: #000;
+    text-decoration: underline;
+    border-bottom: none;
+  }
+
+  .blog-content a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+  }
+
+  .blog-content blockquote {
+    border-left: 2px solid #000;
+    background: transparent;
+  }
+
+  .blog-content pre {
+    background: #f3f4f6;
+    color: #000;
+    border: 1px solid #d1d5db;
+  }
+
+  .blog-content img {
+    page-break-inside: avoid;
+  }
+}

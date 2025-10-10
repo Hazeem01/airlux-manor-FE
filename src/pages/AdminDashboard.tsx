@@ -8,6 +8,8 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
+import RichTextEditor from '@/components/RichTextEditor';
+import DOMPurify from 'dompurify';
 import { 
   getCurrentUser, 
   logoutUser, 
@@ -89,7 +91,7 @@ const AdminDashboard = () => {
     content: '',
     featuredImage: '',
     categories: [] as string[],
-    status: 'draft' as 'draft' | 'published',
+    status: 'draft' as 'draft' | 'published' | 'archived',
     seoTitle: '',
     seoDescription: '',
     seoKeywords: ''
@@ -313,20 +315,29 @@ const AdminDashboard = () => {
         
         const uploadResult = await uploadImages(fileList.files);
         
-        if (uploadResult.success && uploadResult.data && uploadResult.data.files.length > 0) {
-          const featuredImageUrl = uploadResult.data.files[0].url;
-
-          // Step 3: Update post with featured image
-          setCreationProgress({ 
-            step: 3, 
-            message: 'Updating post with featured image...', 
-            total: totalSteps 
-          });
-          
-          await updateBlogPost(createdPost._id, {
-            featuredImage: featuredImageUrl
-          });
+        if (!uploadResult.success || !uploadResult.data || uploadResult.data.files.length === 0) {
+          throw new Error(uploadResult.error || 'Failed to upload featured image');
         }
+        
+        const featuredImageUrl = uploadResult.data.files[0].url;
+        console.log('Image uploaded successfully:', featuredImageUrl);
+
+        // Step 3: Update post with featured image
+        setCreationProgress({ 
+          step: 3, 
+          message: 'Updating post with featured image...', 
+          total: totalSteps 
+        });
+        
+        const updateResult = await updateBlogPost(createdPost._id, {
+          featuredImage: featuredImageUrl
+        });
+        
+        if (!updateResult.success) {
+          throw new Error(updateResult.error || 'Failed to update post with featured image');
+        }
+        
+        console.log('Post updated with featured image successfully');
       }
 
       // Success!
@@ -629,6 +640,11 @@ const AdminDashboard = () => {
       });
       setDeleteCategoryDialog({ open: false, category: null });
     }
+  };
+
+  // Sanitize HTML content with DOMPurify for secure rendering
+  const createSafeMarkup = (html: string) => {
+    return { __html: DOMPurify.sanitize(html) };
   };
 
   const handleImageFileSelect = (event: React.ChangeEvent<HTMLInputElement>, target: 'new' | 'edit') => {
@@ -1515,15 +1531,12 @@ const AdminDashboard = () => {
 
             <div className="space-y-2">
               <Label htmlFor="content" className="font-inter text-sm font-medium text-gray-700">
-                Content *
+                Content * (Rich Text Editor)
               </Label>
-              <Textarea
-                id="content"
+              <RichTextEditor
                 value={newPostData.content}
-                onChange={(e) => handlePostDataChange('content', e.target.value)}
-                placeholder="Write your blog post content here..."
-                rows={8}
-                className="font-inter"
+                onChange={(value) => handlePostDataChange('content', value)}
+                placeholder="Write your blog post content here... Use the toolbar to format your text with headings, bold, italic, lists, images, and more."
               />
             </div>
 
@@ -1790,10 +1803,10 @@ const AdminDashboard = () => {
                 <label className="block font-inter text-sm font-medium text-gray-700 mb-1">
                   Content
                 </label>
-                <div className="bg-gray-50 p-4 rounded-lg">
+                <div className="bg-gray-50 p-4 rounded-lg max-h-96 overflow-y-auto">
                   <div 
-                    className="font-inter text-gray-900 prose max-w-none"
-                    dangerouslySetInnerHTML={{ __html: selectedBlogPost.content || '' }}
+                    className="blog-content font-inter text-gray-900 prose max-w-none"
+                    dangerouslySetInnerHTML={createSafeMarkup(selectedBlogPost.content || '')}
                   />
                 </div>
               </div>
@@ -1877,15 +1890,12 @@ const AdminDashboard = () => {
 
             <div className="space-y-2">
               <Label htmlFor="edit-content" className="font-inter text-sm font-medium text-gray-700">
-                Content *
+                Content * (Rich Text Editor)
               </Label>
-              <Textarea
-                id="edit-content"
+              <RichTextEditor
                 value={editPostData.content}
-                onChange={(e) => setEditPostData(prev => ({ ...prev, content: e.target.value }))}
-                placeholder="Write your blog post content here..."
-                rows={8}
-                className="font-inter"
+                onChange={(value) => setEditPostData(prev => ({ ...prev, content: value }))}
+                placeholder="Write your blog post content here... Use the toolbar to format your text with headings, bold, italic, lists, images, and more."
               />
             </div>
 
